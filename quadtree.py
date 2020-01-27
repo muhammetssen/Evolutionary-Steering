@@ -10,11 +10,11 @@ class Rectangle:
         self.h = h
     
     def contains(self,point):
-        
         return point.x > self.x - self.w and point.x < self.x + self.w and point.y > self.y - self.h and point.y < self.y + self.h
 
     def intersects(self,limit):
         return not ( limit.x - limit.w > self.x + self.w or limit.x + limit.w < self.x - self.w or  limit.y - limit.h > self.y + self.h or limit.y + limit.h < self.y - self.h )
+
 class QuadTree:
     def __init__(self,boundary,capacity):
         self.boundary = boundary
@@ -62,6 +62,7 @@ class QuadTree:
             if self.divided:
                 found += self.NorthEast.query(limit) + self.NorthWest.query(limit) + self.SouthEast.query(limit) + self.SouthWest.query(limit)
         return found
+        
 from math import inf
 def distance(x1,y1,x2,y2):
     return ((x1-x2)**2 + (y1-y2)**2)**0.5

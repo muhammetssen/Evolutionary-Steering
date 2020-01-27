@@ -32,7 +32,6 @@ class Person:
         self.power = speed**2
 
 def feed():
-    deads= []
     from food import food_list
     from main import people_turtles,width,height,food_turtles
 
