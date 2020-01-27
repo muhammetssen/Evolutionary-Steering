@@ -13,6 +13,7 @@ def farm(count):
         name = str(x)+str(y)
         food_list[name] = Food(x,y)
 
+
 class Food:
     def __init__(self,x,y):
         #import main
